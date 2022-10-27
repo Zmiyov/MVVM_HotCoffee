@@ -91,8 +91,8 @@
 		A59BEBA0290A6592006537C9 /* MVVM_HotCoffee */ = {
 			isa = PBXGroup;
 			children = (
-				A57843C9290AC80700EDCD80 /* ViewModels */,
 				A57843C6290AA5B700EDCD80 /* Models */,
+				A57843C9290AC80700EDCD80 /* ViewModels */,
 				A57843C3290A9EB700EDCD80 /* Services */,
 				A59BEBB5290A65F7006537C9 /* Controllers */,
 				A59BEBA1290A6592006537C9 /* AppDelegate.swift */,
