@@ -10,6 +10,7 @@
 		A57843C5290A9EF200EDCD80 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57843C4290A9EF200EDCD80 /* WebService.swift */; };
 		A57843C8290AA5D900EDCD80 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57843C7290AA5D900EDCD80 /* Order.swift */; };
 		A57843CB290AC82300EDCD80 /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57843CA290AC82300EDCD80 /* OrderViewModel.swift */; };
+		A57843CD290AF9B500EDCD80 /* AddCoffeeOrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57843CC290AF9B500EDCD80 /* AddCoffeeOrderViewModel.swift */; };
 		A59BEBA2290A6592006537C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59BEBA1290A6592006537C9 /* AppDelegate.swift */; };
 		A59BEBA4290A6592006537C9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59BEBA3290A6592006537C9 /* SceneDelegate.swift */; };
 		A59BEBA9290A6592006537C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A59BEBA7290A6592006537C9 /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 		A57843C4290A9EF200EDCD80 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		A57843C7290AA5D900EDCD80 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		A57843CA290AC82300EDCD80 /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
+		A57843CC290AF9B500EDCD80 /* AddCoffeeOrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCoffeeOrderViewModel.swift; sourceTree = "<group>"; };
 		A59BEB9E290A6592006537C9 /* MVVM_HotCoffee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVM_HotCoffee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A59BEBA1290A6592006537C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A59BEBA3290A6592006537C9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				A57843CA290AC82300EDCD80 /* OrderViewModel.swift */,
+				A57843CC290AF9B500EDCD80 /* AddCoffeeOrderViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A57843C8290AA5D900EDCD80 /* Order.swift in Sources */,
+				A57843CD290AF9B500EDCD80 /* AddCoffeeOrderViewModel.swift in Sources */,
 				A59BEBA2290A6592006537C9 /* AppDelegate.swift in Sources */,
 				A59BEBA4290A6592006537C9 /* SceneDelegate.swift in Sources */,
 				A59BEBB7290A679B006537C9 /* OrdersTableViewController.swift in Sources */,
