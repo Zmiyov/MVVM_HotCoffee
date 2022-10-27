@@ -15,7 +15,6 @@ enum NetworkError: Error {
 
 struct Resource<T: Codable> {
     let url: URL
-    
 }
 
 class WebService {
@@ -29,6 +28,7 @@ class WebService {
             }
              
             let result = try? JSONDecoder().decode(T.self, from: data)
+//            print(result)
             if let result = result {
                 DispatchQueue.main.async {
                     completion(.success(result))
