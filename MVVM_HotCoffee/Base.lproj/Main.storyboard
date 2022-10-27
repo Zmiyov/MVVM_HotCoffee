@@ -94,16 +94,8 @@
                                     <outlet property="delegate" destination="6k8-cm-6Yf" id="xdb-gK-9GG"/>
                                 </connections>
                             </tableView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="tcU-aK-1nJ">
-                                <rect key="frame" x="92" y="487" width="206" height="32"/>
-                                <segments>
-                                    <segment title="Small"/>
-                                    <segment title="Medium"/>
-                                    <segment title="Large"/>
-                                </segments>
-                            </segmentedControl>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eoR-Wx-XrX">
-                                <rect key="frame" x="95" y="626" width="200" height="34"/>
+                                <rect key="frame" x="95" y="660" width="200" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="HgC-ne-kWL"/>
                                     <constraint firstAttribute="height" constant="34" id="RnO-by-2DW"/>
@@ -112,7 +104,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YpG-Fg-8d5">
-                                <rect key="frame" x="95" y="584" width="200" height="34"/>
+                                <rect key="frame" x="95" y="618" width="200" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="I99-AP-QA6"/>
                                     <constraint firstAttribute="width" constant="200" id="aPZ-8Q-cpV"/>
@@ -124,23 +116,27 @@
                         <viewLayoutGuide key="safeArea" id="5wv-VB-Xma"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="tcU-aK-1nJ" firstAttribute="centerX" secondItem="k3G-4y-W0d" secondAttribute="centerX" id="39F-Au-Kej"/>
-                            <constraint firstItem="tcU-aK-1nJ" firstAttribute="top" secondItem="uUj-lv-owo" secondAttribute="bottom" constant="37.333333333333314" id="5QS-ec-pf8"/>
                             <constraint firstItem="eoR-Wx-XrX" firstAttribute="centerX" secondItem="k3G-4y-W0d" secondAttribute="centerX" id="8eu-zY-tIp"/>
                             <constraint firstItem="uUj-lv-owo" firstAttribute="width" secondItem="k3G-4y-W0d" secondAttribute="width" id="CNU-sX-cNv"/>
-                            <constraint firstItem="YpG-Fg-8d5" firstAttribute="top" secondItem="tcU-aK-1nJ" secondAttribute="bottom" constant="66" id="FOh-XB-6GO"/>
                             <constraint firstItem="uUj-lv-owo" firstAttribute="top" secondItem="5wv-VB-Xma" secondAttribute="top" id="Jw3-iD-qqJ"/>
                             <constraint firstItem="uUj-lv-owo" firstAttribute="height" secondItem="k3G-4y-W0d" secondAttribute="height" multiplier="0.5" id="NBj-VW-9Ic"/>
                             <constraint firstItem="YpG-Fg-8d5" firstAttribute="centerX" secondItem="k3G-4y-W0d" secondAttribute="centerX" id="OyL-SN-wz3"/>
+                            <constraint firstItem="5wv-VB-Xma" firstAttribute="bottom" secondItem="eoR-Wx-XrX" secondAttribute="bottom" constant="93" id="Rwa-h9-tfw"/>
                             <constraint firstItem="uUj-lv-owo" firstAttribute="leading" secondItem="5wv-VB-Xma" secondAttribute="leading" id="Tkf-wb-mY1"/>
                             <constraint firstItem="eoR-Wx-XrX" firstAttribute="top" secondItem="YpG-Fg-8d5" secondAttribute="bottom" constant="8" symbolic="YES" id="iSZ-KG-GUh"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add new order" id="ZQ4-LV-yxA">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="i2v-XD-8wZ"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="KPO-hy-xY9"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="KPO-hy-xY9">
+                            <connections>
+                                <action selector="save" destination="6k8-cm-6Yf" id="dQg-UT-unW"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="emailTextField" destination="eoR-Wx-XrX" id="cGt-9E-fmD"/>
+                        <outlet property="nameTextField" destination="YpG-Fg-8d5" id="Xi1-FU-mIs"/>
                         <outlet property="tableView" destination="uUj-lv-owo" id="N3j-P1-4Ju"/>
                     </connections>
                 </viewController>

@@ -13,12 +13,27 @@ class AddOrderViewController: UIViewController, UITableViewDelegate, UITableView
     private var viewModel = AddCoffeeOrderViewModel()
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    
+    private var coffeeSizesSegmentedControl: UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupUI()
+        
 //        tableView.delegate = self
 //        tableView.dataSource = self
+    }
+    
+    private func setupUI() {
+        self.coffeeSizesSegmentedControl = UISegmentedControl(items: self.viewModel.sizes)
+        self.coffeeSizesSegmentedControl.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(self.coffeeSizesSegmentedControl)
+        
+        self.coffeeSizesSegmentedControl.topAnchor.constraint(equalTo: self.tableView.bottomAnchor, constant: 20).isActive = true
+        self.coffeeSizesSegmentedControl.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -30,5 +45,30 @@ class AddOrderViewController: UIViewController, UITableViewDelegate, UITableView
         let cell = tableView.dequeueReusableCell(withIdentifier: "CoffeeTypeTableViewCell", for: indexPath)
         cell.textLabel?.text = self.viewModel.types[indexPath.row]
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        tableView.cellForRow(at: indexPath)?.accessoryType = .none
+    }
+    
+    @IBAction func save() {
+        
+        let name = self.nameTextField.text
+        let email = self.emailTextField.text
+        
+        let selectedSize = self.coffeeSizesSegmentedControl.titleForSegment(at: self.coffeeSizesSegmentedControl.selectedSegmentIndex)
+        
+        guard let indexPath = self.tableView.indexPathForSelectedRow else {
+            fatalError("Error in selecting coffee!")
+        }
+        
+        self.viewModel.name = name
+        self.viewModel.email = email
+        self.viewModel.selectedSize = selectedSize
+        self.viewModel.selectedType = self.viewModel.types[indexPath.row]
     }
 }
