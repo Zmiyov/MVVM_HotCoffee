@@ -29,6 +29,34 @@ struct Order: Codable {
 
 extension Order {
     
+    static var all: Resource<[Order]> = {
+        
+        guard let url = URL(string: "http://guarded-retreat-82533.herokuapp.com/orders/") else {
+            fatalError("Url is incorrect!")
+        }
+        return Resource<[Order]>(url: url)
+    }()
+    
+    static func create(viewModel: AddCoffeeOrderViewModel) -> Resource<Order?> {
+        let order = Order(viewModel)
+        guard let url = URL(string: "http://guarded-retreat-82533.herokuapp.com/orders/") else {
+            fatalError("Url is incorrect!")
+        }
+        guard let data = try? JSONEncoder().encode(order) else {
+            fatalError("Error encoding order!") }
+        
+        var resource = Resource<Order?>(url: url)
+        resource.httpMethod = .post
+        resource.body = data
+        
+        return resource
+        
+    }
+    
+}
+
+extension Order {
+    
     init?(_ viewModel: AddCoffeeOrderViewModel) {
         
         guard let name = viewModel.name,
